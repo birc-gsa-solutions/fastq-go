@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"birc.au.dk/gsa/fastq"
 )
 
 func main() {
@@ -18,5 +20,11 @@ func main() {
 	}
 	defer f.Close()
 
-	fmt.Println("I should be processing the input file now!")
+	err = fastq.ScanFastq(f, func(rec *fastq.FastqRecord) {
+		fmt.Println(rec.Read)
+	})
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "%s", err.Error())
+		os.Exit(1)
+	}
 }
