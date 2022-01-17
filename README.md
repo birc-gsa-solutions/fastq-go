@@ -21,8 +21,14 @@ Write a program, `list-names`, that reads a SimpleFASTQ file and outputs all the
 
 You can test your program using `./test-list-names.sh`.
 
+
+In `progs/list-names/main.go` you will find a template to start from. Read the `progs/README.md` file for how to build and install the resulting executable. If you want to share source files between executables, you can check `shared/shared.go` for further information. Basically, you can put any directory in the root and import it as a module relative to `birc.au.dk/gsa`. For example, if you have a module in the directory `fastq/` in the root of the repository, you can import it with `import "birc.au.dk/gsa/fastq"`.
+
+
 ## Exercise
 
 Write a program, `list-seqs`, that reads a SimpleFASTQ file and outputs all the read sequences, one sequence per line.
 
 You can test your program using `./test-list-seqs.sh`.
+
+In `progs/list-seqs/main.go` you will find a template to start from. Read the `progs/README.md` file for how to build and install the resulting executable.
